@@ -6,7 +6,7 @@ const state ={
     categories:[],
     singleProductDetails:0,
     productByCategory:[],
-    createNavigationFromCategory:[]
+    
 };
 
 const getters ={};
@@ -41,8 +41,6 @@ const actions = {
     {
          const response =await axios.get('https://fakestoreapi.com/products?sort=asc');
          commit('GET_SORTED_PRODUCTS',response.data);
-         console.log(response.data);
-
     },
     async retrieveAllProducts({commit},payload){
         const products =await axios.get(`https://fakestoreapi.com/products?limit=${payload}`);

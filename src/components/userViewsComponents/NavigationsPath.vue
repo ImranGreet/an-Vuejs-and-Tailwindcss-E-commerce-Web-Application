@@ -10,8 +10,10 @@
      space-x-3 lg:space-x-12">
 
         <router-link to="/" 
-          class="font-works-sans uppercase text-sky-900/75 tracking-tight text-2xl lg:text-4xl 
-          font-extrabold pb-2">
+          class="font-works-sans uppercase
+           text-sky-900/75 tracking-tight 
+           text-2xl lg:text-4xl 
+           font-extrabold pb-2">
            xenmesh
         </router-link>
         
@@ -20,7 +22,6 @@
           </button>
 
           <router-link :to="{name:`products`}" 
-         
             class="hidden lg:block uppercase text-md 
             tracking-wide lg:hover:underline 
             lg:hover:underline-offset-4 
@@ -28,7 +29,8 @@
             Our Products
           </router-link>
 
-          <router-link :to="{name:`category`,   params:{category:nav}}" 
+          <router-link 
+            :to="{name:`category`,params:{category:nav}}" 
             v-for="nav in navigationsWays" :key="nav" 
             class="hidden lg:block uppercase text-md 
             tracking-wider lg:hover:underline 
@@ -37,8 +39,6 @@
             {{nav}}
           </router-link>
 
-           
-        
           <router-link to="#">
             <font-awesome-icon icon="fa-solid fa-magnifying-glass"/>
           </router-link>
@@ -60,7 +60,6 @@
 
       <router-link :to="{name:`login`}" class="space-x-2 lg:hover:shadow-xl">
         <font-awesome-icon icon="fa-solid fa-user"/>
-        
       </router-link>
 
      </div>
@@ -70,7 +69,7 @@
 </template>
 
 <script>
-import { computed ,watch} from 'vue';
+import { computed } from 'vue';
 import { useStore } from 'vuex';
 import { useRoute } from 'vue-router';
 
@@ -81,13 +80,13 @@ export default {
         const store = useStore();
         const route =useRoute();
         const navigationsWays = computed(()=>store.state.products.categories);
-        const wishedItems =computed(()=>store.state.cart.wishIteams.length);
-        const cartedItems =computed(()=>1);
-
+        const wishedItems = computed(()=>store.state.cart.wishIteams.length);
+        const cartedItems = computed(()=>store.state.cart.cartIteams.length);
+        
         return {
            navigationsWays,
            wishedItems,
-           cartedItems
+           cartedItems,
         }
 
     }

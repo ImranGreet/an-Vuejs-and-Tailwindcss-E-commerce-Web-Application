@@ -57,10 +57,14 @@ export default {
      
 
       function addTocart(cartIteamId){
-        store.dispatch(`cart/retrivePurchasedItems`,cartIteamId);
+        store.
+        dispatch(`cart/retrivePurchasedItems`,
+        cartIteamId);
       };
        function addToWishList(wishItemId){
-        store.dispatch(`cart/retriveWishedItems`,wishItemId);
+        store.
+        dispatch(`cart/retriveWishedItems`,
+        wishItemId);
       };
       
         return {

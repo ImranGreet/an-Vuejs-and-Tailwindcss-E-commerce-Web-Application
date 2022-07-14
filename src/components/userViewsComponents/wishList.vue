@@ -1,8 +1,5 @@
 
-<template>
-    <p class="my-20" v-for="wish in wishedProducts" :key="wish.id">{{wish}}</p>
-    
-</template>
+
 
 <script>
 import { ref ,computed, onMounted} from 'vue'

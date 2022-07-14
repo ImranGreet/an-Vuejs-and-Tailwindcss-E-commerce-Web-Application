@@ -22,20 +22,20 @@ const routes = [
         path:'/products',
         name:'products',
         component:()=>import('@/components/userViewsComponents/productView.vue'),
-        beforeEnter(to,from,next){
-          store.dispatch('products/retrieveCategories');
-           store.dispatch('products/retrieveAllProducts');
-          next();
+        async beforeEnter(to,from,next){
+           await store.dispatch('products/retrieveCategories');
+           await store.dispatch('products/retrieveAllProducts');
+           next();
         }
       },
       {
-        path:'/products/:category',
+        path:'/products/category/:category',
         name:'category',
         component:()=>import('@/components/ReusableComponents/productShowByCategory.vue'),
-       async beforeEnter(to,from,next){
+         async beforeEnter(to,from,next){
          await store.dispatch('products/retrieveCategories');
          await store.dispatch('products/retrieveProductsByCategory',to.params.category);
-          next();
+         next();
         },
        },
       {
@@ -43,8 +43,8 @@ const routes = [
         name:'productDetails',
         component:
         ()=>import('@/components/ReusableComponents/productDetails.vue'),
-        beforeEnter(to,from,next){
-         store.dispatch(`products/retrieveSingleProductById`,to.params.id);
+        async beforeEnter(to,from,next){
+         await store.dispatch(`products/retrieveSingleProductById`,to.params.id);
          next();
         }
       }, 

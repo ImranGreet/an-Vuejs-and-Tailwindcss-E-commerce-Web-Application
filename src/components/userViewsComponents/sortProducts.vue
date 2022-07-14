@@ -2,15 +2,17 @@
  <template>
     <section class="w-full h-auto space-y-16">
 
-        <div class="uppercase text-center space-y-4">
-            <p class="text-gray-600 font-works-sans tracking-widest">
-              see whats new around
-            </p>
-            <h1 class="text-gray-900 font-lato text-2xl lg:text-6xl 
-              font-semibold tracking-wide">
-              sort products
-            </h1>
-        </div>
+       <headingAndtext>
+
+          <template #heading>
+            <h1>sort products</h1>
+          </template>
+
+          <template #text>
+           <p>  see whats new around</p>
+          </template>
+          
+       </headingAndtext>
 
        <div class="w-full lg:w-11/12 mx-auto h-auto
         flex flex-col lg:flex-row lg:flex-wrap justify-between items-center gap-y-6">
@@ -56,12 +58,14 @@ import PaginationButton from '@/utility/paginationButton.vue';
 import Product from '../ReusableComponents/Product.vue';
 import PaginateToElements from '../ReusableComponents/paginateToElements.vue';
 
+
 export default {
     name: "sortProducts",
      components: { 
       PaginationButton, 
       Product, 
-      PaginateToElements
+      PaginateToElements,
+     
     },
 
     setup() {
@@ -73,7 +77,7 @@ export default {
         const isPrevButtonWorking =ref(true);
         const isNextButtonWorking =ref(false);
         const products = computed(() => 
-          sortProducts.slice(previusIteams.value, loadedIteams.value));
+              sortProducts.slice(previusIteams.value, loadedIteams.value));
         
         function next(){
           if(loadedIteams.value<sortProducts.length){

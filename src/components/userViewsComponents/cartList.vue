@@ -1,8 +1,5 @@
 
-<template>
-    <p class="my-20" v-for="cart in cartLists" :key="cart.id">{{cart}}</p>
-    
-</template>
+
 
 <script>
 import { ref ,computed, onMounted} from 'vue'
@@ -10,7 +7,7 @@ import { ref ,computed, onMounted} from 'vue'
 import { useStore } from 'vuex'
 
 export default {
-    name: "cartlist",
+    name: "cartList",
     
     setup() {
         const store =useStore();
@@ -26,7 +23,6 @@ export default {
         function checkTrue(){
          checked.value=!checked.value
         }
-        
         
         return {
             cartLists,

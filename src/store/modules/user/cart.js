@@ -1,18 +1,26 @@
 
+
 import products from './products';
 
 const state ={
     cartIteams:[],
     wishIteams:[],
+    
 };
 
-const getters ={};
+const getters ={
+  numberOfIteams(state){
+    return state.cartIteamsToBeShow.length;
+  }
+};
 
 const mutations = {
+  
  ADD_TO_CART(state,payload)
  {
-      state.cartIteams.push(payload);
+    state.cartIteams.push(payload);
  },
+ 
  ADD_TO_WISHLIST(state,payload)
  {
    state.wishIteams.push(payload);
