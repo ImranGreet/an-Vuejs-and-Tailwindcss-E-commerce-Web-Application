@@ -39,7 +39,7 @@
             {{nav}}
           </router-link>
 
-          <router-link to="#">
+          <router-link to="#" class="animate-spin">
             <font-awesome-icon icon="fa-solid fa-magnifying-glass"/>
           </router-link>
 

@@ -35,9 +35,9 @@
           <router-link 
           :to="{name:`category`,params:{category:catLast.category}}" 
           v-for="catLast in categoriesLastToShow" :key="catLast.id" 
-          class="w-full h-1/2 text-center">
+          class="w-full h-1/2 text-center ">
           <img :src="catLast.image" :alt="catLast.title" class="w-full h-full">
-           <h2 class="uppercase font-works-sans text-2xl tracking-wider">
+           <h2 class=" uppercase font-works-sans text-2xl tracking-wider">
             {{catLast.category}}
             </h2>
        </router-link>
