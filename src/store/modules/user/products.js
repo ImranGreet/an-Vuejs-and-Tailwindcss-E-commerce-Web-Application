@@ -6,6 +6,7 @@ const state ={
     categories:[],
     singleProductDetails:0,
     productByCategory:[],
+    limitProducts:[],
     
 };
 
@@ -32,6 +33,10 @@ const mutations = {
         state.singleProductDetails = payload;
         
     },
+    GET_PRODUCTS_INLIMIT(state,payload){
+        state.limitProducts = payload;
+        console.log(state.limitProducts);
+    }
     
    
 };
@@ -43,7 +48,7 @@ const actions = {
          commit('GET_SORTED_PRODUCTS',response.data);
     },
     async retrieveAllProducts({commit},payload){
-        const products =await axios.get(`https://fakestoreapi.com/products?limit=${payload}`);
+        const products =await axios.get(`https://fakestoreapi.com/products`);
         commit('GET_ALL_PRODUCTS',products.data);
     },
     async retrieveCategories({commit}){
@@ -58,6 +63,10 @@ const actions = {
     async retrieveProductsByCategory({commit},payload){
         await axios.get(`https://fakestoreapi.com/products/category/${payload}`).
         then(response=>{commit("GET_PRODUCTSBY_CATEGORY",response.data)});
+    },
+    async retrieveProductsByLimit({commit},payload){
+        await axios.get(`https://fakestoreapi.com/products?limit=${payload}`).
+        then(response=>{commit("GET_PRODUCTS_INLIMIT",response.data)});
     },
   
 };

@@ -139,7 +139,7 @@ export default {
       const store =useStore();
         
         const categories =computed(()=>store.state.products.categories);
-        const allProducts =computed(()=>store.state.products.allProducts);
+        const allProducts =computed(()=>store.state.products.limitProducts);
         const iteamsToBeload =ref(6);
         const buttonShow=ref(false);
         const showProducts =ref(true);
@@ -151,7 +151,7 @@ export default {
      async function  load(){
         if(iteamsToBeload.value<=20){
            iteamsToBeload.value+=6;
-        await store.dispatch(`products/retrieveAllProducts`,iteamsToBeload.value);
+        await store.dispatch('products/retrieveProductsByLimit',iteamsToBeload.value);
         }else if(iteamsToBeload.value>19){
          showProducts.value=false;
         }
