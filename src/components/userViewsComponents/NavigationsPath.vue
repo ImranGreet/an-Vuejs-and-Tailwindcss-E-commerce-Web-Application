@@ -48,7 +48,8 @@
      <div class="w-1/2 lg:w-1/5 flex justify-end space-x-3 
      text-xl lg:text-2xl text-gray-600">
 
-      <router-link :to="{name:`wish`}" class="space-x-2 lg:hover:shadow-xl">
+      <router-link :to="{name:`wish`}"
+        class="space-x-2 lg:hover:shadow-xl">
         <font-awesome-icon icon="fa-solid fa-heart"/>
         <span class="inline-block font-works-sans ">({{wishedItems}})</span>
       </router-link>
@@ -56,7 +57,7 @@
        <router-link :to="{name:`cart`}" class="space-x-2 lg:hover:shadow-xl">
         <font-awesome-icon icon="fa-solid fa-bag-shopping"/>
         <span class="inline-block  font-works-sans ">({{cartedItems}})</span>
-      </router-link>
+       </router-link>
 
       <router-link :to="{name:`login`}" class="space-x-2 lg:hover:shadow-xl">
         <font-awesome-icon icon="fa-solid fa-user"/>
@@ -71,14 +72,13 @@
 <script>
 import { computed } from 'vue';
 import { useStore } from 'vuex';
-import { useRoute } from 'vue-router';
+
 
 export default {
     name:"NavigationsPath",
 
     setup(){
         const store = useStore();
-        const route =useRoute();
         const navigationsWays = computed(()=>store.state.products.categories);
         const wishedItems = computed(()=>store.state.cart.wishIteams.length);
         const cartedItems = computed(()=>store.state.cart.cartIteams.length);

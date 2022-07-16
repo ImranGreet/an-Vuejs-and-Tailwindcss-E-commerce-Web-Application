@@ -16,17 +16,17 @@
          space-y-12 lg:space-y-0">
 
        <div class="flex flex-col lg:flex-row 
-       w-72  lg:w-[400px] h-48 lg:h-96  
-       lg:even:grow shadow-sm"
-          v-for="catFirst in categoriesFirstToShow" :key="catFirst.id">
-          <router-link 
-          :to="{name:`category`,params:{category:catFirst.category}}" 
-          class=" text-center w-full h-full">
-            <img :src="catFirst.image" :alt="catFirst.title" class="w-full h-full">
-            <h2 class="uppercase font-works-sans text-2xl tracking-wider">
-               {{catFirst.category}}
-            </h2>
-          </router-link>
+          w-72 lg:w-[400px] h-48 
+          lg:h-96 lg:even:grow shadow-sm"
+            v-for="catFirst in categoriesFirstToShow" :key="catFirst.id">
+            <router-link 
+            :to="{name:`category`,params:{category:catFirst.category}}" 
+            class=" text-center w-full h-full">
+               <img :src="catFirst.image" :alt="catFirst.title" class="w-full h-full">
+               <h2 class="uppercase font-works-sans text-2xl tracking-wider">
+                  {{catFirst.category}}
+               </h2>
+            </router-link>
        </div>
 
       <div class="flex flex-col
@@ -60,8 +60,8 @@ export default {
     const products = computed(()=>store.state.products.allProducts);
     const categories = computed(()=>store.state.products.categories);
     const categoryThumbnail = ref([]);
-    const categoriesFirstToShow =ref([]);
     const categoriesLastToShow =ref([]);
+    const categoriesFirstToShow =ref([]);
    
     
     for(let i=0;i<categories.value.length;i++)
@@ -77,11 +77,11 @@ export default {
     });
     
     return {
-      products,
-      categories,
-      categoryThumbnail,
       categoriesFirstToShow,
-      categoriesLastToShow
+      categoriesLastToShow,
+      categoryThumbnail,
+      categories,
+      products,
      }
   }
 }

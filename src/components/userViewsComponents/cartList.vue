@@ -7,7 +7,8 @@
     <div class="flex flex-col justify-center
      items-center space-y-2">
         <h2 v-if="cartLists.length>0" 
-        class="text-lg lg:text-xl font-medium font-libre-franklin 
+        class="text-lg lg:text-xl 
+        font-medium font-libre-franklin 
         uppercase tracking-wider">
         Iteams you have been carted to purchase
         </h2>
@@ -59,16 +60,10 @@ export default {
             productsToShow.value +=3;
         }
 
-        function checkTrue(){
-         checked.value=!checked.value
-        }
-     
-        
         return {
             cartLists,
             productsToShow,
             checked,
-            checkTrue,
             loadMore
             
         };

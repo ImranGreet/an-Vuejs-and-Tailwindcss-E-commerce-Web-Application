@@ -33,7 +33,7 @@
 
         <div class="w-full border border-gray-600/20 p-3">
 
-          <h3 class="uppercase tracking-widest  text-xl font-lato">sort by</h3>
+          <h3 class="uppercase tracking-widest text-xl font-lato">sort by</h3>
 
           <div class="w-full">
 
@@ -68,21 +68,27 @@
           items-center bg-slate-800 
           text-slate-200 border 
           border-gray-700/20 
-          rounded-full shadow-xl 
           shadow-rose-200 
-          animate-bounce 
-          drop-shadow-lg">
+           drop-shadow-lg
+           rounded-full 
+           animate-bounce 
+           shadow-xl">
           <span v-if="!buttonShow">
             <font-awesome-icon icon="fa-solid fa-plus"/>
           </span>
-          <span v-if="buttonShow" class="duration-75 delay-100 text-red-500 font-extrabold">
+          <span v-if="buttonShow" 
+            class="duration-75 delay-100 text-red-500 font-extrabold">
             <font-awesome-icon icon="fa-solid fa-minus"/>
           </span>
          </button>
 
-        <div v-if="buttonShow" class="flex flex-col justify-start space-y-1 animate-pulse duration-150 delay-200">
+        <div v-if="buttonShow" 
+          class="flex flex-col justify-start 
+          space-y-1 animate-pulse
+          duration-150 delay-200">
           <router-link
-            :to="{name:`category`,params:{category:cat}}" v-for="cat in categories" :key="cat"
+            :to="{name:`category`,params:{category:cat}}" 
+            v-for="cat in categories" :key="cat"
             class="capitalize font-lato 
             font-extralight tracking-widest 
             lg:hover:underline 
@@ -96,17 +102,19 @@
     </div>
     <div class="w-full lg:w-3/4 mt-20">
 
-      <div class="flex flex-wrap justify-between iteams-center gap-y-8">
-        
-    <Product v-for="product in allProducts"
-    :key="product.id" 
-    :productsDetails="product">
-    </Product>
-        
-      </div>
+    <div class="flex flex-wrap justify-between iteams-center gap-y-8">
+      <Product v-for="product in allProducts"
+      :key="product.id" 
+      :productsDetails="product">
+      </Product>
+    </div>
 
       <div class="mt-8">
-         <PaginationButton @click="load()" v-if="showProducts" class="w-36 h-10"><span class="text-red-500 pr-2"><font-awesome-icon icon="fa-solid fa-plus" /></span>Load More</PaginationButton>
+         <PaginationButton @click="load()" v-if="showProducts" 
+         class="w-36 h-10">
+         <span class="text-red-500 pr-2"><font-awesome-icon icon="fa-solid fa-plus" />
+         </span>Load More
+         </PaginationButton>
       </div>
 
     </div>
@@ -167,15 +175,3 @@ export default {
 }
 </script>
 
-<style>
-/* we will explain what these classes do next! */
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
-</style>
