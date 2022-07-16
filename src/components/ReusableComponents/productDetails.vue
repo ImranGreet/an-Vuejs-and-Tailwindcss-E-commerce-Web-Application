@@ -13,9 +13,8 @@
                 </template>
 
                  <template #heading>
-                   <h1 class="text-start text-5xl">{{singleProduct.title}}</h1>
+                   <h1 class="text-start text-2xl lg:text-5xl font-libre-franklin">{{singleProduct.title}}</h1>
                 </template>
-
              </headingAndtext>
              
 
@@ -25,9 +24,14 @@
            </div>
 
            <div class="flex space-x-3">
-            <input type="number"  v-model="productQuantity" class="px-4 w-10 lg:w-14  rounded-lg bg-slate-800  text-white"/>
-            <button class="px-3 lg:px-4 py-1.5 lg:py-2 bg-slate-800 hover:bg-stone-900 text-white">Add to cart</button>
-            <button class="px-4 rounded-lg  bg-slate-800 text-white">
+            <input type="number"  v-model="productQuantity" 
+            class="px-4 w-10 lg:w-14  bg-slate-800  text-white"/>
+
+            <button class="px-3 lg:px-4 py-1.5 lg:py-2
+             bg-slate-800 hover:bg-stone-900
+              text-white">Add to cart</button>
+
+            <button class="px-4   bg-slate-800 text-white">
                  <span class="inline-block text-2xl text-slate-100">
                     <font-awesome-icon icon="fa-solid fa-heart" />
                    </span>
@@ -37,17 +41,19 @@
            <button @click="$router.back()" 
            class="tex-white px-2.5 py-1 lg:px-3 lg:py-2
             bg-slate-700 text-white w-36 " >
+            <span class="text-pink-500 px-1">
+               <font-awesome-icon icon="fa-solid fa-angle-left" />
+            </span>
             Go Back
-            </button>
+           </button>
 
-             
           </div>
        </div>
     </section>
 </template>
 
 <script>
-import { computed, onMounted, ref } from 'vue';
+import { computed,  ref } from 'vue';
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router';
 
@@ -56,7 +62,7 @@ export default {
     setup(){
         const store = useStore();
         const route =useRoute();
-        const productQuantity=ref(2);
+        const productQuantity=ref(1);
         const singleProduct =computed(()=>store.state.products.singleProductDetails);
        
         return {

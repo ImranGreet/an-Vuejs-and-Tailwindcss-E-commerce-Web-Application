@@ -16,7 +16,7 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
 import {faMagnifyingGlass,faHeart,faBagShopping,
     faUser,faAlignJustify,faPlus,faMoneyCheckDollar,
     faClockRotateLeft,faTruck,faMinus,faAnglesLeft,
-    faAnglesRight,faTrash} from '@fortawesome/free-solid-svg-icons';
+    faAnglesRight,faTrash,faAngleLeft,faXmark,faCartPlus} from '@fortawesome/free-solid-svg-icons';
 
 import {faFacebook,faTwitter,faYoutube,faPinterest} from '@fortawesome/free-brands-svg-icons';
 
@@ -24,7 +24,7 @@ library.add(faMagnifyingGlass,faHeart,faBagShopping,
     faUser,faAlignJustify,faPlus,faMoneyCheckDollar,
     faClockRotateLeft,faTruck,faFacebook,faTwitter,
     faYoutube,faPinterest,faMinus,faAnglesLeft,
-    faAnglesRight,faTrash);
+    faAnglesRight,faTrash,faAngleLeft,faXmark,faCartPlus);
 
 createApp(App).
 component('font-awesome-icon',FontAwesomeIcon).

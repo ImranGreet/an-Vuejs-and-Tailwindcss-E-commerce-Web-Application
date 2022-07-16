@@ -62,6 +62,7 @@ export default {
     const categoryThumbnail = ref([]);
     const categoriesFirstToShow =ref([]);
     const categoriesLastToShow =ref([]);
+   
     
     for(let i=0;i<categories.value.length;i++)
     {

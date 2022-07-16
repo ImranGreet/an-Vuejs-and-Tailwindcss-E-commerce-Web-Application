@@ -2,7 +2,7 @@
   <section class="w-full h-auto lg:h-96 bg-gray-800 font-works-sans">
     <div class="w-full lg:w-4/5 mx-auto h-full 
     flex flex-col justify-evenly 
-    space-y-3 lg:space-y-0">
+    space-y-3 lg:space-y-0 ">
 
       <div class="w-full flex flex-col lg:flex-row 
       justify-between items-center 
