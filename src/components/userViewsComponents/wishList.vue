@@ -2,7 +2,7 @@
 <template>
     <section class="w-full">
          <ReusableCart v-for="wish in wishedProducts" 
-         :key="wish.id" :productInfo="wish">
+         :key="wish.id" :productInfo="wish" class="even:bg-slate-300">
          
      </ReusableCart>
 

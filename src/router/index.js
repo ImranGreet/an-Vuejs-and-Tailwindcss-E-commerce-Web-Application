@@ -24,7 +24,7 @@ const routes = [
         component:()=>import('@/components/userViewsComponents/productView.vue'),
         async beforeEnter(to,from,next){
            await store.dispatch('products/retrieveCategories');
-           await store.dispatch('products/retrieveAllProducts');
+           await store.dispatch('products/retrieveAllProducts',6);
            next();
         }
       },

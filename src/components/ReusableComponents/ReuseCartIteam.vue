@@ -24,23 +24,23 @@
          Quantity
          </p>
 
-         <div class="space-x-1">
-          <input type="number" value="1"
-           class="px-2 py-1 rounded-lg border
-          border-gray-600 w-12 caret-pink-600 
-          focus:caret-pink-700 focus:outline-none">
+        <div class="space-x-1">
+            <input type="number" value="1"
+            class="px-2 py-1 rounded-lg border
+            border-gray-600 w-12 caret-pink-600 
+            focus:caret-pink-700 focus:outline-none">
 
-         <button v-if="cartButton" 
-         class="px-2 py-1 rounded-lg border
-          border-gray-600 w-12  
-          caret-pink-600 
-          focus:caret-pink-700
-          lg:hover:bg-slate-800
-          lg:hover:text-white 
-            duration-100 delay-150
-            focus:outline-none">
-           <span><font-awesome-icon icon="fa-solid fa-cart-plus" /></span>
-          </button>
+           <button v-if="cartButton" 
+              class="px-2 py-1 rounded-lg border
+              border-gray-600 w-12  
+              caret-pink-600 
+              focus:caret-pink-700
+              lg:hover:bg-slate-800
+              lg:hover:text-white 
+                duration-100 delay-150
+                focus:outline-none">
+                <span><font-awesome-icon icon="fa-solid fa-cart-plus" /></span>
+            </button>
          </div>
       </div>
 

@@ -72,4 +72,3 @@ export default {
 }
 </script>
 
-<ReusableCart v-for="cart in cartLists" :key="cart.id" :productInfo="cart"></ReusableCart>
